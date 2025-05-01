@@ -1,13 +1,10 @@
 package airplan_system;
 
-import airplan_system.SignUp;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
@@ -21,18 +18,19 @@ public class Login extends javax.swing.JFrame {
         Password = "";
     }
 
-    public Login(String Mail, String Password) {
-        setTitle("LOGIN PAGE ");
-        initComponents();
-        setLocationRelativeTo(null);
-        setMail(Mail);
-        setPassword(Password);
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(this, "Cannot Load JDBC DRIVER ?????");
-        }
-    }
+    // just for quick testing 
+//    public Login(String Mail, String Password) {
+//        setTitle("LOGIN PAGE ");
+//        initComponents();
+//        setLocationRelativeTo(null);
+//        setMail(Mail);
+//        setPassword(Password);
+//        try {
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//        } catch (ClassNotFoundException e) {
+//            JOptionPane.showMessageDialog(this, "Cannot Load JDBC DRIVER ?????");
+//        }
+//    }
 
     public Login() {
         setTitle("LOGIN PAGE ");
@@ -279,6 +277,7 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_SignUpButtonActionPerformed
 
+//////////--functions--//////////////////////
     public void LOGIN(String email, String password) {
         // Input validation
         if (email == null || email.trim().isEmpty()) {
@@ -292,7 +291,7 @@ public class Login extends javax.swing.JFrame {
 
         // Database configuration
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
-        String query = "SELECT email,role,user_name FROM users WHERE email = ? AND password = ?";
+        String query = "SELECT email,role,user_name ,user_id FROM users WHERE email = ? AND password = ?";
 
         // Using try-with-resources for automatic resource management
         try (Connection con = DriverManager.getConnection(url); PreparedStatement pstmt = con.prepareStatement(query)) {
@@ -303,12 +302,15 @@ public class Login extends javax.swing.JFrame {
 
             try (ResultSet result = pstmt.executeQuery()) {
                 if (result.next()) {
-                    String name = result.getString("user_name");
+                    String userName = result.getString("user_name");
                     String role = result.getString("role");
+                    int userId = result.getInt("user_id");
                     JOptionPane.showMessageDialog(null,
-                            "Welcome " + name + " (" + role + ")",
+                            "Welcome " + userName + " (" + role + ")",
                             "Login Successful",
                             JOptionPane.INFORMATION_MESSAGE);
+                    HomePage H = new HomePage(userId, userName);
+                    this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null,
                             "Invalid email or password",
