@@ -37,7 +37,7 @@ public class HomePage extends javax.swing.JFrame {
     private void initComponents() {
 
         jCheckBox1 = new javax.swing.JCheckBox();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        HomeTabbedPane = new javax.swing.JTabbedPane();
         HomeTap = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -51,17 +51,37 @@ public class HomePage extends javax.swing.JFrame {
         deleteButton = new javax.swing.JButton();
         refreshFlightsButton = new javax.swing.JButton();
         ContactUsTap = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         AboutTap = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 700));
+        setPreferredSize(new java.awt.Dimension(1300, 700));
         setResizable(false);
+
+        HomeTabbedPane.setPreferredSize(new java.awt.Dimension(1300, 700));
+
+        HomeTap.setPreferredSize(new java.awt.Dimension(1300, 700));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4759005-removebg-preview.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/HomePage-plane.png"))); // NOI18N
 
         TakeOffText.setFont(new java.awt.Font("Stencil", 2, 36)); // NOI18N
         TakeOffText.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,7 +187,7 @@ public class HomePage extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(refreshFlightsButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,45 +237,179 @@ public class HomePage extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Home", HomeTap);
+        HomeTabbedPane.addTab("Home", HomeTap);
+
+        ContactUsTap.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 3, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Contact Us");
+
+        jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/linkedinW.png"))); // NOI18N
+        jLabel7.setText(" Ebrahim Yousry");
+
+        jLabel8.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/linkedinW.png"))); // NOI18N
+        jLabel8.setText(" Ashraf Fouad");
+
+        jLabel9.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/linkedinW.png"))); // NOI18N
+        jLabel9.setText(" Alaa Yakoot");
+
+        jLabel10.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/linkedinW.png"))); // NOI18N
+        jLabel10.setText("  Kareem Hamdy");
+
+        jLabel11.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/linkedinW.png"))); // NOI18N
+        jLabel11.setText(" Abdelrahman Safwat");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/contact-us.jpg"))); // NOI18N
 
         javax.swing.GroupLayout ContactUsTapLayout = new javax.swing.GroupLayout(ContactUsTap);
         ContactUsTap.setLayout(ContactUsTapLayout);
         ContactUsTapLayout.setHorizontalGroup(
             ContactUsTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1211, Short.MAX_VALUE)
+            .addGroup(ContactUsTapLayout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 879, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(ContactUsTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContactUsTapLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(114, 114, 114))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContactUsTapLayout.createSequentialGroup()
+                        .addGroup(ContactUsTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43))
+                    .addGroup(ContactUsTapLayout.createSequentialGroup()
+                        .addGroup(ContactUsTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         ContactUsTapLayout.setVerticalGroup(
             ContactUsTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGroup(ContactUsTapLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel5)
+                .addGap(62, 62, 62)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Contact Us", ContactUsTap);
+        HomeTabbedPane.addTab("Contact Us", ContactUsTap);
+
+        AboutTap.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel19.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Alaa Yakot 22021945");
+
+        jLabel20.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Ashraf Fouad 2202760");
+
+        jLabel21.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Abdelrhman Safwat 2202186");
+
+        jLabel22.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Ebrahim Yousry 2202184");
+
+        jLabel23.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Kareem Hamdy 2202176");
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI Black", 3, 38)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("About Us");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("<html>We provide safe, reliable, and comfortable flights, ensuring excellent service for all travelers.<br> we are here to make your journey seamless.<br>Thank you for flying with us!</html> ");
+
+        jLabel13.setFont(new java.awt.Font("Berlin Sans FB Demi", 3, 24)); // NOI18N
+        jLabel13.setText("Inspired By ENG.Mohamed Kamal  :)");
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/about-us.jpg"))); // NOI18N
+        jLabel14.setText("jLabel14");
 
         javax.swing.GroupLayout AboutTapLayout = new javax.swing.GroupLayout(AboutTap);
         AboutTap.setLayout(AboutTapLayout);
         AboutTapLayout.setHorizontalGroup(
             AboutTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1211, Short.MAX_VALUE)
+            .addGroup(AboutTapLayout.createSequentialGroup()
+                .addGroup(AboutTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AboutTapLayout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jLabel24))
+                    .addGroup(AboutTapLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AboutTapLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(AboutTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel22)))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 869, Short.MAX_VALUE))
         );
         AboutTapLayout.setVerticalGroup(
             AboutTapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGroup(AboutTapLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81)
+                .addComponent(jLabel19)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel23)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel21)
+                .addGap(79, 79, 79)
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("About", AboutTap);
+        HomeTabbedPane.addTab("About", AboutTap);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(HomeTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(HomeTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -375,17 +529,33 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel AboutTap;
     private javax.swing.JPanel ContactUsTap;
     private javax.swing.JTable FlightsTable;
+    private javax.swing.JTabbedPane HomeTabbedPane;
     private javax.swing.JPanel HomeTap;
     private javax.swing.JLabel TakeOffText;
     private javax.swing.JButton addFlightButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton refreshFlightsButton;
     private javax.swing.JButton viewMyTickets;
     // End of variables declaration//GEN-END:variables

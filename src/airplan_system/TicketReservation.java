@@ -73,7 +73,7 @@ public class TicketReservation extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(6, 100, 130));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/time-to-explore-world.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/time-to-travel.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 28)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,7 +146,7 @@ public class TicketReservation extends javax.swing.JFrame {
                                                 .addComponent(seatsText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addComponent(takeOffTimeText)
                                             .addComponent(arriveTimeText))
-                                        .addGap(0, 102, Short.MAX_VALUE))
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addComponent(sourceText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(19, 19, 19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -164,7 +164,7 @@ public class TicketReservation extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2)
