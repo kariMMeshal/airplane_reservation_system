@@ -23,6 +23,7 @@ public class TicketReservation extends javax.swing.JFrame {
     String flightDate;
 // Initializer Block ( runs even before Constructor to prevent null errors 
 // if fields are accessed before constructor logic )
+
     {
         source = "";
         destination = "";
@@ -51,6 +52,7 @@ public class TicketReservation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -61,6 +63,8 @@ public class TicketReservation extends javax.swing.JFrame {
         priceText = new javax.swing.JLabel();
         seatsText = new javax.swing.JLabel();
         bookNowButton = new javax.swing.JButton();
+        takeOffTimeText = new javax.swing.JLabel();
+        arriveTimeText = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(1, 161, 195));
@@ -84,11 +88,11 @@ public class TicketReservation extends javax.swing.JFrame {
 
         sourceText.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         sourceText.setForeground(new java.awt.Color(255, 255, 255));
-        sourceText.setText("From : "+source+"  at : "+takeOffTime );
+        sourceText.setText("From : "+source+"  on : "+flightDate );
 
         destinationText.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         destinationText.setForeground(new java.awt.Color(255, 255, 255));
-        destinationText.setText("To : "+destination +"  at : "+arriveTime );
+        destinationText.setText("To : "+destination);
 
         priceText.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         priceText.setForeground(new java.awt.Color(51, 204, 0));
@@ -106,6 +110,14 @@ public class TicketReservation extends javax.swing.JFrame {
                 bookNowButtonActionPerformed(evt);
             }
         });
+
+        takeOffTimeText.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
+        takeOffTimeText.setForeground(new java.awt.Color(255, 255, 255));
+        takeOffTimeText.setText(" at : "+takeOffTime);
+
+        arriveTimeText.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
+        arriveTimeText.setForeground(new java.awt.Color(255, 255, 255));
+        arriveTimeText.setText("  at : "+arriveTime);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,21 +138,27 @@ public class TicketReservation extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(32, 32, 32)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sourceText, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(destinationText, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(priceText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(seatsText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(76, 76, 76))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(destinationText, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(priceText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(seatsText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(takeOffTimeText)
+                                            .addComponent(arriveTimeText))
+                                        .addGap(0, 102, Short.MAX_VALUE))
+                                    .addComponent(sourceText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(19, 19, 19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(FlightDetailsText, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bookNowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(FlightDetailsText, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(bookNowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,13 +174,17 @@ public class TicketReservation extends javax.swing.JFrame {
                 .addComponent(FlightDetailsText)
                 .addGap(18, 18, 18)
                 .addComponent(sourceText)
+                .addGap(4, 4, 4)
+                .addComponent(takeOffTimeText)
                 .addGap(18, 18, 18)
                 .addComponent(destinationText)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(arriveTimeText)
+                .addGap(24, 24, 24)
                 .addComponent(seatsText)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(priceText)
-                .addGap(63, 63, 63)
+                .addGap(38, 38, 38)
                 .addComponent(bookNowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -267,6 +289,7 @@ public class TicketReservation extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Flight : " + flightId + "\n" + "Seat No : " + seatNumber + "\n" + "this ticket was booked at : " + bookingDate + "\n",
                         "Ticket booked successfully!", JOptionPane.INFORMATION_MESSAGE);
                 updateSeatsLeft();
+                updateBookingCount();
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Error booking ticket: " + ex.getMessage());
@@ -288,17 +311,32 @@ public class TicketReservation extends javax.swing.JFrame {
         }
     }
 
+    private void updateBookingCount() {
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
+        String query = "UPDATE flights SET booking_count = booking_count + 1 WHERE flight_id = ?";
+
+        try (Connection con = DriverManager.getConnection(url); PreparedStatement pstmt = con.prepareStatement(query)) {
+            pstmt.setInt(1, flightId);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Error updating booking count: " + ex.getMessage());
+        }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FlightDetailsText;
+    private javax.swing.JLabel arriveTimeText;
     private javax.swing.JButton bookNowButton;
     private javax.swing.JLabel destinationText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel priceText;
     private javax.swing.JLabel seatsText;
     private javax.swing.JLabel sourceText;
+    private javax.swing.JLabel takeOffTimeText;
     // End of variables declaration//GEN-END:variables
 }

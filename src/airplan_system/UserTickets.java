@@ -185,7 +185,7 @@ public class UserTickets extends javax.swing.JFrame {
                 String seats = rs.getString("seat_number");
                 double price = rs.getDouble("price");
                 String date = rs.getString("flight_date");
-                int flightId = rs.getInt("flight_id");
+                String flightId = rs.getString("flight_number");
 
                 model.addRow(new Object[]{flightId, seats, source, destination, date, takeOff, arrive});
             }

@@ -18,20 +18,6 @@ public class Login extends javax.swing.JFrame {
         Password = "";
     }
 
-    // just for quick testing 
-//    public Login(String Mail, String Password) {
-//        setTitle("LOGIN PAGE ");
-//        initComponents();
-//        setLocationRelativeTo(null);
-//        setMail(Mail);
-//        setPassword(Password);
-//        try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//        } catch (ClassNotFoundException e) {
-//            JOptionPane.showMessageDialog(this, "Cannot Load JDBC DRIVER ?????");
-//        }
-//    }
-
     public Login() {
         setTitle("LOGIN PAGE ");
         initComponents();
@@ -309,7 +295,7 @@ public class Login extends javax.swing.JFrame {
                             "Welcome " + userName + " (" + role + ")",
                             "Login Successful",
                             JOptionPane.INFORMATION_MESSAGE);
-                    HomePage H = new HomePage(userId, userName);
+                    HomePage H = new HomePage(userId, userName, role);
                     this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null,

@@ -13,18 +13,21 @@ public class HomePage extends javax.swing.JFrame {
     String userName;
     int userId;
 
-    public HomePage(int userId, String userName) {
+    public HomePage(int userId, String userName, String role) {
         setTitle("HOME PAGE ");
         this.userName = userName;
         this.userId = userId;
         initComponents();
+        if (role.equals("user")) {
+            addFlightButton.setVisible(false);
+            deleteButton.setVisible(false);
+        }
         setLocationRelativeTo(null);
         this.setVisible(true);
         this.pack();
         addTableMouseListener();
         loadFlights();
         FlightsTable.getTableHeader().setReorderingAllowed(false);
-        FlightsTable.getTableHeader().setResizingAllowed(false);
         FlightsTable.setRowHeight(30);
         FlightsTable.setDefaultEditor(Object.class, null);
     }
@@ -44,6 +47,9 @@ public class HomePage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         viewMyTickets = new javax.swing.JButton();
+        addFlightButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        refreshFlightsButton = new javax.swing.JButton();
         ContactUsTap = new javax.swing.JPanel();
         AboutTap = new javax.swing.JPanel();
 
@@ -112,29 +118,64 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        addFlightButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        addFlightButton.setText("Add New Flight");
+        addFlightButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addFlightButtonActionPerformed(evt);
+            }
+        });
+
+        deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        deleteButton.setText("Delete Existing Flight");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
+        refreshFlightsButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        refreshFlightsButton.setText("Refresh Flights");
+        refreshFlightsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshFlightsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(TakeOffText, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(viewMyTickets, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(viewMyTickets, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(refreshFlightsButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addFlightButton, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(deleteButton)))
+                        .addGap(21, 21, 21))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,14 +186,21 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(viewMyTickets))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TakeOffText)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                        .addComponent(TakeOffText))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addFlightButton)
+                            .addComponent(refreshFlightsButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deleteButton)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout HomeTapLayout = new javax.swing.GroupLayout(HomeTap);
@@ -216,6 +264,18 @@ public class HomePage extends javax.swing.JFrame {
     private void viewMyTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMyTicketsActionPerformed
         UserTickets T = new UserTickets(userId, userName);
     }//GEN-LAST:event_viewMyTicketsActionPerformed
+
+    private void addFlightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFlightButtonActionPerformed
+        AddFlightForm F = new AddFlightForm();
+    }//GEN-LAST:event_addFlightButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        DeleteFlightForm F = new DeleteFlightForm();
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void refreshFlightsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshFlightsButtonActionPerformed
+        loadFlights();
+    }//GEN-LAST:event_refreshFlightsButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -283,6 +343,8 @@ public class HomePage extends javax.swing.JFrame {
 
             // Apply the model to the JTable
             FlightsTable.setModel(model);
+            stmt.close();
+            con.close();
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Error fetching flights: " + ex.getMessage());
@@ -315,6 +377,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTable FlightsTable;
     private javax.swing.JPanel HomeTap;
     private javax.swing.JLabel TakeOffText;
+    private javax.swing.JButton addFlightButton;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -322,6 +386,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton refreshFlightsButton;
     private javax.swing.JButton viewMyTickets;
     // End of variables declaration//GEN-END:variables
 }
