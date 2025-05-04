@@ -267,7 +267,7 @@ public class AddFlightForm extends javax.swing.JFrame {
     }
 
 ////--Functions--//////////////////////////
-    private void addFlightToDatabase() {
+    public void addFlightToDatabase() {
 
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
 

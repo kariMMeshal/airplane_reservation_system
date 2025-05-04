@@ -115,7 +115,7 @@ public class DeleteFlightForm extends javax.swing.JFrame {
     }
 
 ////--Functions--///////////////////////////////
-    private void deleteFlight() {
+    public void deleteFlight() {
 
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
 

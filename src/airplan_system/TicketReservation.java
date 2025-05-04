@@ -240,7 +240,7 @@ public class TicketReservation extends javax.swing.JFrame {
     }
 
 //////////--functions--//////////////////////
-    private void loadFlightDetails(int flightId) {
+    public void loadFlightDetails(int flightId) {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
         String query = "SELECT * FROM flights WHERE flight_id=?";
 
@@ -263,7 +263,7 @@ public class TicketReservation extends javax.swing.JFrame {
         }
     }
 
-    private void bookTicket() {
+    public void bookTicket() {
         if (seatsLeft <= 0) {
             JOptionPane.showMessageDialog(this, "No seats available for this flight  :( ");
             return;
@@ -296,7 +296,7 @@ public class TicketReservation extends javax.swing.JFrame {
         }
     }
 
-    private void updateSeatsLeft() {
+    public void updateSeatsLeft() {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
         String query = "UPDATE flights SET seats_available = seats_available - 1 WHERE flight_id = ?";
 
@@ -311,7 +311,7 @@ public class TicketReservation extends javax.swing.JFrame {
         }
     }
 
-    private void updateBookingCount() {
+    public void updateBookingCount() {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
         String query = "UPDATE flights SET booking_count = booking_count + 1 WHERE flight_id = ?";
 

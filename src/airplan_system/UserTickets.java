@@ -159,7 +159,7 @@ public class UserTickets extends javax.swing.JFrame {
     }
 
 ////-- Functions --/////////////////////////////////////
-    private void loadUserFlights() {
+    public void loadUserFlights() {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
         String query = "SELECT * FROM tickets INNER JOIN flights ON tickets.flight_id = flights.flight_id WHERE user_id=?";
 

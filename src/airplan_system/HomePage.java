@@ -464,7 +464,7 @@ public class HomePage extends javax.swing.JFrame {
         });
     }
 
-    private void loadFlights() {
+    public void loadFlights() {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=airplane_ticket_management;integratedSecurity=true;";
         String query = "SELECT * FROM flights";
 
@@ -505,7 +505,7 @@ public class HomePage extends javax.swing.JFrame {
         }
     }
 
-    private void addTableMouseListener() {
+    public void addTableMouseListener() {
         FlightsTable.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
